@@ -1,4 +1,4 @@
-import Express from "express";
+import Express, {json} from "express";
 
 import {usersRouter} from "./routes/users.js"
 import {authRouter} from "./routes/auth.js"
@@ -8,6 +8,8 @@ import { connectDB } from "./config/db.js";
 const app = Express();
 //connect to mongo atlas
 connectDB();
+//init body parser
+app.use(json({extended: false}))
 
 const PORT = process.env.PORT || 4000;
 

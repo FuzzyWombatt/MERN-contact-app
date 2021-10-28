@@ -13,7 +13,7 @@ authRouter.get('/', (req, res) => {
 //@desc     Auth user and get token
 //@access   Public
 authRouter.post('/', (req, res) => {
-    res.send('registers a user')
+    res.send('get Auth token')
 })
 
 

@@ -1,14 +1,13 @@
 import Express from "express";
-import { Users } from "../models/Users.js";
+import { User } from "../models/User.js";
 
 const usersRouter = Express.Router();
-const user = Users;
 
 //@route    POST api/user
 //@desc     Register a user
 //@access   Public
 usersRouter.post('/', (req, res) => {
-    res.send('registers a user')
+    res.send(req.body)
 })
 
 export {usersRouter};
