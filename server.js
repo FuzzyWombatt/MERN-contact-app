@@ -6,7 +6,7 @@ import {contactsRouter} from "./routes/contacts.js"
 import { connectDB } from "./config/db.js";
 
 const app = Express();
-
+//connect to mongo atlas
 connectDB();
 
 const PORT = process.env.PORT || 4000;
