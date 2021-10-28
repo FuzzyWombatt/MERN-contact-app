@@ -23,6 +23,6 @@ const UserSchema = new Schema({
     },
 })
 //don't use new down here
-const user = model('user', UserSchema);
+const Users = model('user', UserSchema);
 
-export {user}
+export {Users}
