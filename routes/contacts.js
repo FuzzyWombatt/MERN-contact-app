@@ -30,6 +30,4 @@ contactsRouter.delete('/:id', (req, res) => {
     res.send('delete contact')
 })
 
-
-
 export {contactsRouter};
