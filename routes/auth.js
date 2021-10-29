@@ -4,6 +4,7 @@ import Jwt from "jsonwebtoken";
 import { check, validationResult } from "express-validator";
 
 import { User } from "../models/User.js";
+import auth from "../middleware/auth.js"
 
 //ugly way to import from the config, but must be done if using type:module
 import { createRequire } from "module";
@@ -15,8 +16,14 @@ const authRouter = Express.Router();
 //@route    GET api/auth
 //@desc     Get logged in user
 //@access   Private
-authRouter.get("/", (req, res) => {
-  res.send("get logged in user");
+authRouter.get("/", auth, async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id).select('-password');
+        res.json(user);
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).send('Server Error');
+    }
 });
 
 //@route    POST api/auth
