@@ -59,6 +59,7 @@ usersRouter.post(
         }
         
         Jwt.sign(payload, data.jwtsecret, {
+            //don't forget to change when deployed. 
             expiresIn: 360000
         }, 
         (err, token) => {
