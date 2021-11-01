@@ -1,4 +1,10 @@
 import  Express from "express";
+import { check, validationResult } from "express-validator";
+
+
+import { Contact } from "../models/Contact.js";
+import { User } from "../models/User.js";
+import auth from "../middleware/auth.js"
 
 const contactsRouter = Express.Router();
 

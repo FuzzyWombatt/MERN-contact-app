@@ -5,6 +5,7 @@ import { check, validationResult } from "express-validator";
 
 import { User } from "../models/User.js";
 
+
 //ugly way to import from the config, but must be done if using type:module
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
